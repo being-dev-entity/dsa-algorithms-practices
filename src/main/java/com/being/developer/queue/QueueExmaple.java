@@ -10,11 +10,12 @@ public class QueueExmaple {
         createQueue();
         System.out.println("==========Operations===========================");
         queueOperations();
+        System.out.println("==========PriorityQueue===========================");
         queuePriority();
     }
 
     public static void createQueue() {
-        PriorityQueue<String> queue = new PriorityQueue<>();
+        Queue<String> queue = new LinkedList<>();
         queue.add("Abhay");
         queue.add("Rahul");
         queue.add("Rohit");
@@ -23,7 +24,7 @@ public class QueueExmaple {
         System.out.println("Queue: " + queue);
         System.out.println("Head: " + queue.peek());
         System.out.println("Element: " + queue.element());
-        PriorityQueue<String> queue2 = new PriorityQueue<>();
+        Queue<String> queue2 = new LinkedList<>();
         queue2.offer("Abhay");
         queue2.offer("Rahul");
         queue2.offer("Rohit");
@@ -32,10 +33,19 @@ public class QueueExmaple {
         System.out.println("Queue2: " + queue2);
         System.out.println("Head: " + queue.peek());
         System.out.println("Element: " + queue.element());
+
+        Queue<String> queue5 = new LinkedList<>();
+        queue5.offer("A");
+        queue5.offer("C");
+        queue5.offer("B");
+        queue5.offer("F");
+        queue5.offer("D");
+        System.out.println("Queue5: " + queue5);
+        // Queue5: [A, C, B, F, D]
     }
 
     public static void queueOperations() {
-        PriorityQueue<String> queue = new PriorityQueue<>();
+        Queue<String> queue = new LinkedList<>();
         queue.offer("Abhay");
         queue.offer("Rahul");
         queue.offer("Rohit");
@@ -98,16 +108,6 @@ public class QueueExmaple {
         queue4.offer(50);
         queue4.offer(25);
         System.out.println("Queue4: " + queue4);
-
-
-        Queue<String> queue5 = new LinkedList<>();
-        queue5.offer("A");
-        queue5.offer("C");
-        queue5.offer("B");
-        queue5.offer("F");
-        queue5.offer("D");
-        System.out.println("Queue5: " + queue5);
-        // Queue5: [A, C, B, F, D]
 
         Queue<String> queue6 = new PriorityQueue<>();
         queue6.offer("A");
