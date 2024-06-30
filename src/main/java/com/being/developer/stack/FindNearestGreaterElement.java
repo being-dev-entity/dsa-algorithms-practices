@@ -9,12 +9,12 @@ public class FindNearestGreaterElement {
     public static void main(String[] args) {
         Integer[] array = { 1, 3, 2, 4 };
         for (Integer integer : array) {
-            System.out.print(integer+",");
+            System.out.print(integer + ",");
         }
         System.out.println("\nnearest greater elements!");
         Integer[] nearestGreater = findNearestGreater(array);
         for (Integer integer : nearestGreater) {
-            System.out.print(integer+",");
+            System.out.print(integer + ",");
         }
         // output 3,4,4,-1
     }
@@ -42,6 +42,7 @@ public class FindNearestGreaterElement {
             stack.push(array[i]);
         }
         Collections.reverse(list);
+
         return list.toArray(new Integer[array.length]);
     }
 
