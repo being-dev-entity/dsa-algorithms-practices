@@ -9,16 +9,14 @@ public class InsertionSort {
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i] + " ");
 		}
-		selectionSort(arr);
+		insertionSort(arr);
 		System.out.println("\nSorted array");
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i] + " ");
 		}
-
 	}
 
-	public static void selectionSort(int array[]) {
-
+	public static void insertionSort(int array[]) {
 		for (int i = 1; i < array.length; i++) {
 			int current = array[i];
 			int j = i;
@@ -30,6 +28,5 @@ public class InsertionSort {
 
 			array[j] = current;
 		}
-
 	}
 }
