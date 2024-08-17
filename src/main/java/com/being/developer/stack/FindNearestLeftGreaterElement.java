@@ -1,14 +1,14 @@
 package com.being.developer.stack;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.Stack;
+import java.util.List;
+import java.util.ArrayList;
 
-// find nearest greater to right.
-public class FindNearestGreaterElement {
+// find nearest left greater
+public class FindNearestLeftGreaterElement {
     public static void main(String[] args) {
         Integer[] array = { 1, 3, 2, 4 };
+
         for (Integer integer : array) {
             System.out.print(integer + ",");
         }
@@ -17,20 +17,22 @@ public class FindNearestGreaterElement {
         for (Integer integer : nearestGreater) {
             System.out.print(integer + ",");
         }
-        // output 3,4,4,-1
+        // output -1,-1,2,-1
+
     }
 
-    public static Integer[] findNearestGreater(Integer[] array) {
+    private static Integer[] findNearestGreater(Integer[] array) {
         Stack<Integer> stack = new Stack<>();
         List<Integer> list = new ArrayList<>();
 
-        for (int i = array.length - 1; i >= 0; i--) {
+        for (int i = 0; i <= array.length - 1; i++) {
+
             if (stack.isEmpty()) {
                 list.add(-1);
             } else if (stack.peek() > array[i]) {
-                list.add(stack.peek());
+                list.add(array[i]);
             } else {
-                while (!stack.isEmpty() && stack.peek() <= array[i]) {
+                while (!stack.isEmpty() && stack.peek() < array[i]) {
                     stack.pop();
                 }
                 // could not found any greater element in the stack.
@@ -42,8 +44,6 @@ public class FindNearestGreaterElement {
             }
             stack.push(array[i]);
         }
-        // need to reverse since we started from right/last scanning.
-        Collections.reverse(list);
 
         return list.toArray(new Integer[array.length]);
     }

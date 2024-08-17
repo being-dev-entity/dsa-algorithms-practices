@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Stack;
 
 // find nearest smaller to right.
-public class FindNearestSmallerElement {
+public class FindNearestRightSmallerElement {
     public static void main(String[] args) {
         Integer[] array = { 1, 3, 2, 4 };
         for (Integer integer : array) {
