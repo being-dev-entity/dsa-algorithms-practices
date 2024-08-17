@@ -26,6 +26,7 @@ public class CustomLinkedList {
     public void remove(int value) {
         if (head.value == value) {
             head = head.next;
+            size--;
             return;
         }
         Node current = head;
