@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
+// find nearest greater to right.
 public class FindNearestGreaterElement {
     public static void main(String[] args) {
         Integer[] array = { 1, 3, 2, 4 };
@@ -41,6 +42,7 @@ public class FindNearestGreaterElement {
             }
             stack.push(array[i]);
         }
+        // need to reverse since we started from right/last scanning.
         Collections.reverse(list);
 
         return list.toArray(new Integer[array.length]);
