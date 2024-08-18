@@ -38,5 +38,47 @@ public class LinkedListExample {
         customLinkedList.remove(70);
         System.out.println("Size: " + customLinkedList.size());
         customLinkedList.traverse();
+
+        System.out.println("***Index based add ****");
+
+        customLinkedList.add(60);
+
+        System.out.println("Size: " + customLinkedList.size());
+        customLinkedList.traverse();
+        
+         // add at last
+        customLinkedList.addAt(70,4);
+        System.out.println("Size: " + customLinkedList.size());
+        customLinkedList.traverse();
+       
+        // add at middle
+        customLinkedList.addAt(111,2);
+        System.out.println("Size: " + customLinkedList.size());
+        customLinkedList.traverse();
+
+        // add at start
+        customLinkedList.addAt(222,0);
+        System.out.println("Size: " + customLinkedList.size());
+        customLinkedList.traverse();
+
+
+        System.out.println("***Index based remove****");
+
+
+           // remove at top
+           customLinkedList.removeAt(0);
+           System.out.println("Size: " + customLinkedList.size());
+           customLinkedList.traverse();
+          
+           // remove at middle
+           customLinkedList.removeAt(2);
+           System.out.println("Size: " + customLinkedList.size());
+           customLinkedList.traverse();
+   
+           // add at last
+           customLinkedList.removeAt(4);
+           System.out.println("Size: " + customLinkedList.size());
+           customLinkedList.traverse();
+
     }
 }

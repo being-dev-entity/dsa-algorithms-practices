@@ -10,6 +10,26 @@ public class CustomLinkedList {
     public CustomLinkedList() {
     }
 
+    public void addAt(int value, int position) {
+        Node newNode = new Node(value);
+        if (position == 0) {
+            newNode.next = head;
+            head = newNode;
+            size++;
+            return;
+        }
+
+        Node currentNode = head;
+        for (int i = 0; i < position-1; i++) {
+            currentNode = currentNode.next;
+        }
+        Node temp = currentNode.next;
+        currentNode.next = newNode;
+        newNode.next = temp;
+        size++;
+        return;
+    }
+
     public void add(int value) {
 
         if (Objects.isNull(head)) {
@@ -21,6 +41,23 @@ public class CustomLinkedList {
         tail.next = new Node(value);
         tail = tail.next;
         size++;
+    }
+
+    public void removeAt(int position) {
+
+        if (position == 0) {
+            head = head.next;
+            size--;
+            return;
+        }
+
+        Node currentNode = head;
+        for (int i = 0; i < position-1; i++) {
+            currentNode = currentNode.next;
+        }
+        currentNode.next = currentNode.next.next;
+        size--;
+        return;
     }
 
     public void remove(int value) {
