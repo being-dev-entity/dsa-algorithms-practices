@@ -78,5 +78,9 @@ public class LinkedListExample {
         System.out.println("Size: " + customLinkedList.size());
         customLinkedList.traverse();
 
+        System.out.println("***Reverse Linked List****");
+        customLinkedList.reverse();
+        System.out.println("Size: " + customLinkedList.size());
+        customLinkedList.traverse();
     }
 }

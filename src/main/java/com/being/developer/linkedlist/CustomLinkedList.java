@@ -99,6 +99,27 @@ public class CustomLinkedList<T> {
             current = current.next;
         }
     }
+
+    public void reverse() {
+        // Linked list keep tail as well so re-assiging it the new changed tail end.
+        tail = head;
+        // starting from second element.
+        Node<T> current = head.next;
+        Node<T> prevNode = head;
+        // head will be tail now so pointing to null;
+        prevNode.next = null;
+
+        while (current != null) {
+            Node<T> next = current.next; // to keep next node ref for iteration.
+            current.next = prevNode;
+            prevNode = current;
+            current = next;
+        }
+        // Current start pointing to null at the end of linked list.
+        // therefore prevNode will be head then.
+        head = prevNode;
+    }
+
 }
 
 class Node<T> {
@@ -108,4 +129,41 @@ class Node<T> {
     public Node(T value) {
         this.value = value;
     }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((value == null) ? 0 : value.hashCode());
+        result = prime * result + ((next == null) ? 0 : next.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Node<T> other = (Node) obj;
+        if (value == null) {
+            if (other.value != null)
+                return false;
+        } else if (!value.equals(other.value))
+            return false;
+        if (next == null) {
+            if (other.next != null)
+                return false;
+        } else if (!next.equals(other.next))
+            return false;
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Node [value=" + value + ", next=" + next + "]";
+    }
+
 }
