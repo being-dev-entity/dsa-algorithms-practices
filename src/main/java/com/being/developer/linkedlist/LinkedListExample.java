@@ -6,7 +6,7 @@ public class LinkedListExample {
 
         System.out.println("Add some elements in linked list");
 
-        CustomLinkedList customLinkedList = new CustomLinkedList();
+        CustomLinkedList<Integer> customLinkedList = new CustomLinkedList<>();
         customLinkedList.add(10);
         customLinkedList.add(20);
         customLinkedList.add(30);
@@ -45,40 +45,38 @@ public class LinkedListExample {
 
         System.out.println("Size: " + customLinkedList.size());
         customLinkedList.traverse();
-        
-         // add at last
-        customLinkedList.addAt(70,4);
+
+        // add at last
+        customLinkedList.addAt(70, 4);
         System.out.println("Size: " + customLinkedList.size());
         customLinkedList.traverse();
-       
+
         // add at middle
-        customLinkedList.addAt(111,2);
+        customLinkedList.addAt(111, 2);
         System.out.println("Size: " + customLinkedList.size());
         customLinkedList.traverse();
 
         // add at start
-        customLinkedList.addAt(222,0);
+        customLinkedList.addAt(222, 0);
         System.out.println("Size: " + customLinkedList.size());
         customLinkedList.traverse();
 
-
         System.out.println("***Index based remove****");
 
+        // remove at top
+        customLinkedList.removeAt(0);
+        System.out.println("Size: " + customLinkedList.size());
+        customLinkedList.traverse();
 
-           // remove at top
-           customLinkedList.removeAt(0);
-           System.out.println("Size: " + customLinkedList.size());
-           customLinkedList.traverse();
-          
-           // remove at middle
-           customLinkedList.removeAt(2);
-           System.out.println("Size: " + customLinkedList.size());
-           customLinkedList.traverse();
-   
-           // add at last
-           customLinkedList.removeAt(4);
-           System.out.println("Size: " + customLinkedList.size());
-           customLinkedList.traverse();
+        // remove at middle
+        customLinkedList.removeAt(2);
+        System.out.println("Size: " + customLinkedList.size());
+        customLinkedList.traverse();
+
+        // add at last
+        customLinkedList.removeAt(4);
+        System.out.println("Size: " + customLinkedList.size());
+        customLinkedList.traverse();
 
     }
 }
