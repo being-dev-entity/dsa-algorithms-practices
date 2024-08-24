@@ -167,3 +167,38 @@ class Node<T> {
     }
 
 }
+
+class CylicLinkedList {
+    private Node<Integer> head;
+
+    public void buildDummyIntegerLinkedList() {
+        Node<Integer> head = new Node<>(10);
+
+        Node<Integer> node1 = new Node<>(20);
+        Node<Integer> node2 = new Node<>(30);
+        Node<Integer> node3 = new Node<>(40);
+        Node<Integer> node4 = new Node<>(50);
+        Node<Integer> node5 = new Node<>(60);
+        Node<Integer> node6 = new Node<>(70);
+        Node<Integer> node7 = new Node<>(80);
+        Node<Integer> node8 = new Node<>(90);
+
+        head.next = node1;
+        node1.next = node2;
+        node2.next = node3;
+        node3.next = node4;
+        node4.next = node5;
+        node5.next = node6;
+        node6.next = node7;
+        node7.next = node8;
+        
+        // setting cylce as 5th node with value 60
+        node8.next = node5; 
+
+        this.head = head;
+    }
+
+    public Node<Integer> getHead() {
+        return head;
+    }
+}
