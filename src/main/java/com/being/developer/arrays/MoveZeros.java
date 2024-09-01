@@ -10,8 +10,8 @@ public class MoveZeros {
             System.out.print(integer + ",");
         }
         System.out.println("\nMove zeros:");
-        array  =  moveZeros(array);
-        
+        array = moveZerosByTwoPointers(array);
+
         for (Integer integer : array) {
             System.out.print(integer + ",");
         }
@@ -29,6 +29,22 @@ public class MoveZeros {
         // filling remaining index with zero.
         for (int i = lastNonZeroIndex; i < array.length; i++) {
             array[i] = 0;
+        }
+
+        return array;
+    }
+
+    public static int[] moveZerosByTwoPointers(int array[]) {
+        int left = 0;
+        int right = 0;
+
+        for (right = 0; right < array.length; right++) {
+            if (array[right] != 0) {
+                int temp = array[left];
+                array[left] = array[right];
+                array[right] = temp;
+                left++;
+            }
         }
 
         return array;
