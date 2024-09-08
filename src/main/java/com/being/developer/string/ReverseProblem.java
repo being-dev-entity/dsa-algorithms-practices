@@ -18,7 +18,7 @@ public class ReverseProblem {
         output = new String(chars);
         return output;
     }
-
+    // kind of two pointer,
     private static String reverseOptimized(String input) {
         String output = null;
         char[] chars = new char[input.length()];
