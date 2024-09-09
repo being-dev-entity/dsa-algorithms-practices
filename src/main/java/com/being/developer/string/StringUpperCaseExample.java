@@ -4,9 +4,9 @@ public class StringUpperCaseExample {
     public static void main(String[] args) {
         System.out.println("String upper case example!");
         String input = "Rama";
-        System.out.println(input +" To Upper case: " + toUpperCase(input));
+        System.out.println(input + " To Upper case: " + toUpperCase(input));
         input = "Abc123We";
-        System.out.println(input +" To Upper case: " + toUpperCase(input));
+        System.out.println(input + " To Upper case: " + toUpperCase(input));
     }
 
     private static String toUpperCase(String input) {
