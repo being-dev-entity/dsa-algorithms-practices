@@ -4,7 +4,7 @@ public class StringShift {
     public static void main(String[] args) {
         String input = "abhay";
         System.out.println("Input String : " + input);
-        System.out.println("Shifted String : " + shift(input, 1));
+        System.out.println("Shifted String : " + shift(input, 1)); // bhaya
     }
 
     public static String shift(String input, int shiftValue) {
