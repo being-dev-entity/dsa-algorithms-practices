@@ -26,6 +26,7 @@ public class KadaneAlgorithm {
                 currentSum = 0;
             }
         }
+        
         return maxSum;
     }
 }
