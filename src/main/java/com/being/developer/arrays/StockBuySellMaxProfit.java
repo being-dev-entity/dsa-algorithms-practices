@@ -26,6 +26,10 @@ public class StockBuySellMaxProfit {
 
     // Complexity O(n2) => O(n)
     private static int maxProfit(int[] stockValues) {
+        if (stockValues == null || stockValues.length == 0) {
+            return 0;
+        }
+
         int maxProfit = 0;
         int minPrice = Integer.MAX_VALUE;
         for (int i = 0; i < stockValues.length - 1; i++) {
