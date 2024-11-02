@@ -47,6 +47,5 @@ class StackExample {
         System.out.println("stack add index at 1 then ");
         stack.add(1, 7);
         System.out.println("stack -> " + stack);
-
     }
 }

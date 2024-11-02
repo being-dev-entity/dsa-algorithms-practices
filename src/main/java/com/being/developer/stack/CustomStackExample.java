@@ -8,13 +8,14 @@ public class CustomStackExample {
         for (int i = 1; i <= 20; i++) {
             customStack.push(i);
         }
-        System.out.println("Size is : "+customStack.size());
+        System.out.println("Size is : " + customStack.size());
         while (customStack.peek() != null) {
             System.out.println(customStack.pop());
         }
     }
 }
-//TODO: Make generic type stack.
+
+// TODO: Make generic type stack.
 class CustomStack {
     int MAX_SIZE = 10;
     private Integer[] data;

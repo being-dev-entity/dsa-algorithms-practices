@@ -12,9 +12,10 @@ public class FindNextHighestTemp {
         for (Integer integer : maxTempDays) {
             System.out.print(integer + ",");
         }
-        // output   ,1,1,4,2,1,0,0
-    } 
-    // method will return 0 if no other days found max temp. 
+        // output ,1,1,4,2,1,0,0
+    }
+
+    // method will return 0 if no other days found max temp.
     public static Integer[] maxTempDays(int[] temperature) {
         Stack<Pair> stack = new Stack<>();
         List<Integer> nearestRightGreaterPostions = new ArrayList<>();
@@ -38,15 +39,15 @@ public class FindNextHighestTemp {
             stack.push(new Pair(i, temperature[i]));
         }
         Collections.reverse(nearestRightGreaterPostions);
-          
-       // calculate days gap using nearest greater right position. 
+
+        // calculate days gap using nearest greater right position.
         Integer days[] = new Integer[temperature.length];
-        for (int i = 0; i<nearestRightGreaterPostions.size(); i++) {
-            if(nearestRightGreaterPostions.get(i) == -1){
+        for (int i = 0; i < nearestRightGreaterPostions.size(); i++) {
+            if (nearestRightGreaterPostions.get(i) == -1) {
                 days[i] = 0;
             } else {
                 days[i] = nearestRightGreaterPostions.get(i) - i;
-            }        
+            }
         }
         return days;
     }

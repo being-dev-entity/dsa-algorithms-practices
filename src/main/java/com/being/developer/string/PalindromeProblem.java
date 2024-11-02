@@ -1,4 +1,5 @@
 package com.being.developer.string;
+
 // check if String is palindrome or not!=.
 public class PalindromeProblem {
 
@@ -8,7 +9,6 @@ public class PalindromeProblem {
         System.out.println(input + " Is Palindrome: " + isPalindrome(input));
         input = "ramayan";
         System.out.println(input + " Is Palindrome: " + isPalindrome(input));
-
     }
 
     private static boolean isPalindrome(String input) {
@@ -17,6 +17,7 @@ public class PalindromeProblem {
                 return Boolean.FALSE;
             }
         }
+
         return Boolean.TRUE;
     }
 }

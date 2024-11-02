@@ -18,7 +18,6 @@ public class FindNearestLeftGreaterElement {
             System.out.print(integer + ",");
         }
         // output -1,-1,2,-1
-
     }
 
     private static Integer[] findNearestGreater(Integer[] array) {

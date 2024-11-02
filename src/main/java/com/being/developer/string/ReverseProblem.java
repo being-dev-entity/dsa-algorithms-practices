@@ -6,7 +6,6 @@ public class ReverseProblem {
         String input = "Ramayan";
         String output = reverseOptimized(input);
         System.out.println(input + " Reverse: " + output);
-
     }
 
     private static String reverse(String input) {
@@ -16,8 +15,10 @@ public class ReverseProblem {
             chars[input.length() - 1 - i] = input.charAt(i);
         }
         output = new String(chars);
+
         return output;
     }
+
     // kind of two pointer,
     private static String reverseOptimized(String input) {
         String output = null;
@@ -28,7 +29,7 @@ public class ReverseProblem {
             chars[i] = input.charAt(input.length() - 1 - i); // 3&3, 2&4, 1&5, 0&6;
         }
         output = new String(chars);
+
         return output;
     }
-
 }

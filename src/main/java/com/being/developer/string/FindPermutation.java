@@ -34,6 +34,7 @@ public class FindPermutation {
         }
 
         result.addAll(permutationsQueue);
+        
         return result;
     }
 }
