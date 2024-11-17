@@ -15,17 +15,17 @@ public class ContainerWithMostWater {
         System.out.println("Max Area Found: " + result);
     }
 
-    private static int maxArea(int hegiht[]) {
+    private static int maxArea(int heiGht[]) {
         int maxArea = 0;
         int left = 0;
-        int right = hegiht.length - 1;
+        int right = heiGht.length - 1;
 
         while (left < right) {
-            int minHeight = Math.min(hegiht[left], hegiht[right]);
+            int minHeight = Math.min(heiGht[left], heiGht[right]);
             int width = right - left;
             int currentArea = minHeight * width;
             maxArea = Math.max(maxArea, currentArea);
-            if (hegiht[left] < hegiht[right]) {
+            if (heiGht[left] < heiGht[right]) {
                 left++;
             } else {
                 right--;
