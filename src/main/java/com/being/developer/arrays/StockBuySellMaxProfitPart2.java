@@ -1,7 +1,7 @@
 package com.being.developer.arrays;
 
 // Best time to Buy and Sell Stock ii || Leetcode - 122 | Stock Buy and Sell ||
-// We can buy and sell any number of time stock provided no continous buy only or sell can occur.
+// We can buy and sell any number of time stock provided no continuous buy only or sell can occur.
 public class StockBuySellMaxProfitPart2 {
 
     public static void main(String[] args) {
