@@ -10,7 +10,7 @@ public class SearchElementInSortedInfiteArray {
         }
         int key = 58;
         int index = searchElement(array, key);
-        System.out.println("Search Index for " + key + " is: " + index);
+        System.out.println("\nSearch Index for " + key + " is: " + index);
     }
 
     private static int searchElement(int[] array, int key) {
