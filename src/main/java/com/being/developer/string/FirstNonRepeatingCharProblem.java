@@ -5,6 +5,7 @@ public class FirstNonRepeatingCharProblem {
         System.out.println("First non repeaating char");
         String input = "abha";
         System.out.println("First non repeating char:" + firstNonRepeatingChar(input));
+        // output b when input abhas
     }
 
     // TODO How to do in single for loop.

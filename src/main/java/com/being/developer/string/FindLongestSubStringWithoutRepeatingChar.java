@@ -6,10 +6,9 @@ import java.util.HashSet;
 public class FindLongestSubStringWithoutRepeatingChar {
     public static void main(String[] args) {
         System.out.println("Find longest sbustring without repeating char example!");
-        String input = "abcabcbbd";
+        String input = "abcabcbbd"; // abcs
         String ouString = findLongestSubString(input);
         System.out.println(ouString);
-
     }
 
     private static String findLongestSubString(String input) {
