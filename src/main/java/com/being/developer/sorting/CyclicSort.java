@@ -32,7 +32,7 @@ public class CyclicSort {
     }
 
     private static void swap(int array[], int i, int currectIndex) {
-        int temp = array[i];
+        int temp = array[i]; // this number should be at currectIndex
         array[i] = array[currectIndex];
         array[currectIndex] = temp;
     }
