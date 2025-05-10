@@ -3,13 +3,15 @@ package com.being.developer.overlappingntervals;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class MergingInterval {
     public static void main(String args[]) {
         int[][] intervals = { { 1, 3 }, { 2, 6 }, { 8, 10 }, { 15, 18 } };
-        System.out.println(Arrays.toString(intervals));
+        Stream.of(intervals).forEach(a -> System.out.print(Arrays.toString(a)));
         int[][] merged = mergeIntervals(intervals);
-        System.out.println(Arrays.toString(merged));
+        System.out.println("\n");
+        Stream.of(merged).forEach(a -> System.out.print(Arrays.toString(a)));
     }
 
     public static int[][] mergeIntervals(int[][] intervals) {
