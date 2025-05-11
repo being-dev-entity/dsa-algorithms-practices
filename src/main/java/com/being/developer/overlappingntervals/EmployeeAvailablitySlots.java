@@ -5,6 +5,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
+/*
+Problem: Employee Free Time
+You're given a employees' schedules.
+Each employee has a list of overlapping working time intervals sorted by start time.
+Your task is to find free time intervals of employees.
+*/
 public class EmployeeAvailablitySlots {
     public static void main(String[] args) {
         int[][] intervals = { { 1, 3 }, { 2, 6 }, { 8, 10 }, { 15, 18 } };
@@ -12,36 +18,25 @@ public class EmployeeAvailablitySlots {
         List<int[]> availablity = findAvaialblitySlots(intervals);
         System.out.println("\n");
         availablity.forEach(a -> System.out.print(Arrays.toString(a)));
+       // output: [6, 8][10, 15]
     }
 
     private static List<int[]> findAvaialblitySlots(int[][] intervals) {
         Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
-        List<int[]> mergedIntervals = new ArrayList<>();
-        int currentInterval[] = intervals[0];
-        mergedIntervals.add(currentInterval);
-        for (int[] interval : intervals) {
-            int currentEnd = currentInterval[1];
-            int nextStart = interval[0];
-            int nextEnd = interval[1];
-            if (currentEnd > nextStart) {
-                currentInterval[1] = Math.max(currentEnd, nextEnd);
-            } else {
-                currentInterval = interval;
-                mergedIntervals.add(currentInterval);
-            }
-        }
-        System.out.println("\n");
-        mergedIntervals.forEach(a -> System.out.print(Arrays.toString(a)));
+        List<int[]> mergedIntervals = Arrays.asList(intervals);
         List<int[]> availablity = new ArrayList<>();
-        int freeSlotStart = 0;
-        int freeSlotEnd = 0;
+        int prevEnd = mergedIntervals.get(0)[1];
         for (int i = 1; i < mergedIntervals.size(); i++) {
-            freeSlotStart = mergedIntervals.get(i - 1)[1]; // end time of first meeting
-            freeSlotEnd = mergedIntervals.get(i)[0]; // start time of second meeting.
-            availablity.add(new int[] { freeSlotStart, freeSlotEnd });
+            int currentStart = mergedIntervals.get(i)[0];
+            int currentEnd = mergedIntervals.get(i)[1];
+            if (currentStart > prevEnd) {
+                // means last meeting ending before current meeting
+                availablity.add(new int[] { prevEnd, currentStart });
+            }
+            // Update previous end time
+            prevEnd = Math.max(prevEnd, currentEnd);
         }
 
         return availablity;
-
     }
 }
