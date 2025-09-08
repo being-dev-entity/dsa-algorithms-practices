@@ -12,6 +12,16 @@ public class CustomStackExample {
         while (customStack.peek() != null) {
             System.out.println(customStack.pop());
         }
+
+        System.out.println("Using customStackV1:");
+        CustomStackV1<Integer> customStackV1 = new CustomStackV1<>();
+        for (int i = 1; i <= 20; i++) {
+            customStackV1.push(i);
+        }
+        System.out.println("Size is : " + customStackV1.size());
+        while (customStackV1.peek() != null) {
+            System.out.println(customStackV1.pop());
+        }
     }
 }
 
@@ -77,5 +87,53 @@ class CustomStack {
 
     public int size() {
         return size;
+    }
+}
+
+// can use record java 17
+class Node<T> {
+    T data = null;
+    Node<T> next = null;
+
+    public Node(T data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class CustomStackV1<T> {
+    private Node<T> top;
+    private int length;
+
+    void push(T data) {
+        Node<T> node = new Node<>(data);
+        node.next = top;
+        this.top = node;
+        length++;
+    }
+
+    T pop() {
+        if (isEmpty()) {
+            return null;
+        }
+        T data = top.data;
+        top = top.next;
+        length--;
+        return data;
+    }
+
+    T peek() {
+        if (isEmpty()) {
+            return null;
+        }
+        return top.data;
+    }
+
+    boolean isEmpty() {
+        return this.length == 0;
+    }
+
+    int size() {
+        return this.length;
     }
 }
