@@ -25,7 +25,6 @@ public class ArraySquareNumber {
         List<Integer> squareSortedArray = new ArrayList<>();
         int left = 0;
         int right = input.length - 1;
-        int i = 0;
         while (left <= right) {
             if (Math.abs(input[left]) > Math.abs(input[right])) {
                 squareSortedArray.add(input[left] * input[left]);
@@ -34,14 +33,11 @@ public class ArraySquareNumber {
                 squareSortedArray.add(input[right] * input[right]);
                 right--;
             }
-            i++;
         }
         Collections.reverse(squareSortedArray);
-        // Convert List<Integer> to primitive int[]
-        int[] result = new int[input.length];
-        for (int idx = 0; idx < squareSortedArray.size(); idx++) {
-            result[idx] = squareSortedArray.get(idx);
-        }
-        return result;
+        
+        return squareSortedArray.stream()
+                                .mapToInt(Integer::intValue)
+                                .toArray();
     }
 }
