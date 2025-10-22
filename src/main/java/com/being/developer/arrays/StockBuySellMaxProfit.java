@@ -35,9 +35,7 @@ public class StockBuySellMaxProfit {
         for (int i = 0; i < stockValues.length - 1; i++) {
             if (minPrice < stockValues[i]) {
                 minPrice = stockValues[i];
-            } /* else if (stockValues[i] - minPrice > maxProfit) {
-                maxProfit = stockValues[i] - minPrice;
-            } */
+            }
             maxProfit = Math.max(maxProfit, stockValues[i] - minPrice);
         }
 
