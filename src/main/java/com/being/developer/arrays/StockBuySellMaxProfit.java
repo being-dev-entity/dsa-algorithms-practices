@@ -16,6 +16,7 @@ package com.being.developer.arrays;
 public class StockBuySellMaxProfit {
     public static void main(String[] args) {
         System.out.println("Find best time to buy and sell stock to gain Max Profit.");
+        // int stockValues[] = { 7,1,5,3,6 }; // ans 5
         int stockValues[] = { 2, 3, 4, 1, 5, 23, 24, 10 };
         int maxProfit = maxProfit(stockValues);
         for (int i : stockValues) {
@@ -32,8 +33,8 @@ public class StockBuySellMaxProfit {
 
         int maxProfit = 0;
         int minPrice = Integer.MAX_VALUE;
-        for (int i = 0; i < stockValues.length - 1; i++) {
-            if (minPrice < stockValues[i]) {
+        for (int i = 0; i <= stockValues.length - 1; i++) {
+            if (stockValues[i] < minPrice) {
                 minPrice = stockValues[i];
             }
             maxProfit = Math.max(maxProfit, stockValues[i] - minPrice);
