@@ -1,5 +1,8 @@
 package com.being.developer.stack;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.Iterator;
 import java.util.Stack;
 
 class StackExample {
@@ -8,6 +11,37 @@ class StackExample {
         // stackCreation();
         System.out.println("=============Stack operations ==================");
         stackOperations();
+        System.out.println("=============Stack Itr ==================");
+
+        iteratorExample();
+    }
+
+    private static void iteratorExample() {
+        Stack<String> stack = new Stack<String>();
+
+        stack.push("123");
+        stack.push("456");
+        stack.push("789");
+
+        Iterator<String> iterator = stack.iterator();
+        while (iterator.hasNext()) {
+            Object value = iterator.next();
+            System.out.print("\t" + value);
+        }
+
+        Deque<String> dequeAsStack = new ArrayDeque<String>();
+
+        dequeAsStack.push("one");
+        dequeAsStack.push("two");
+        dequeAsStack.push("three");
+
+        String one = dequeAsStack.pop();
+        String two = dequeAsStack.pop();
+        String three = dequeAsStack.pop();
+
+        System.out.println(one); // three
+        System.out.println(two); // two
+        System.out.println(three); // one
     }
 
     public static void stackCreation() {
